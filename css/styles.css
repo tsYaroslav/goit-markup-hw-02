@@ -1,0 +1,213 @@
+/*  Box sizing rules  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*  Remove default margin  */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/*  Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed  */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/*  Set core root defaults  */
+html {
+  scroll-behavior: smooth;
+}
+
+/*  Set core body defaults  */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/*  A elements that don't have a class get default styles  */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/*  Make images easier to work with  */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/*  Inherit fonts for inputs and buttons  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+* {
+  font: 14px/24px Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.grid {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.main-h1 {
+  font: 900 44px/60px Roboto, 'Helvetica Neue', sans-serif;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.section {
+  display: block;
+  width: 100%;
+  margin-bottom: 100px;
+  clear: both;
+}
+
+.section-caption {
+  margin-bottom: 40px;
+  text-align: center;
+  color: #212121;
+  font: 700 36px/42px Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Header */
+
+.header {
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+}
+
+.logo {
+  display: inline-block;
+  float: left;
+}
+
+.nav-list,
+.contacts-list {
+  list-style-type: none;
+}
+
+.nav-list li,
+.contacts-list li {
+  float: left;
+  padding: 0 25px;
+  display: inline-block;
+}
+
+.nav-list li a,
+.contacts-list li a {
+  text-decoration: none;
+  color: #212121;
+  font: 500 14px/16px Roboto, 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active,
+.contacts-list li a:hover,
+.contacts-list li a.active {
+  color: #2196f3;
+}
+
+.contacts-list {
+  float: right;
+}
+
+/* Main cta section*/
+.main-section {
+  position: relative;
+  background: #2f303a;
+  height: 100vh;
+}
+
+.cta-block {
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.main-cta {
+  display: inline-block;
+  padding: 10px 32px;
+  margin: 0 auto;
+  background: #2196f3;
+  color: #fff;
+  font: 700 16px/30px Roboto, 'Helvetica Neue', sans-serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
+}
+
+.main-cta:hover {
+  cursor: pointer;
+}
+
+/* benefit section */
+
+.benefit {
+  width: 25%;
+  float: left;
+  margin: 0;
+  box-sizing: border-box;
+  padding-right: 30px;
+}
+
+.benefit:nth-child(4n) {
+  padding-right: 0;
+}
+
+.benefit-caption {
+  margin-bottom: 15px;
+  color: #212121;
+  font: 700 14px/16px Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.benefit-text {
+  color: #757575;
+  font: 400 14px/24px Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* expertise section */
+.expertise-item {
+  display: inline-block;
+  float: left;
+  width: 33.33%;
+}
+
+/* team section */
+.team-mate {
+  display: inline-block;
+  float: left;
+  width: 25%;
+}
+
+/* footer */
+.footer {
+  padding: 60px 0;
+  display: inline-block;
+  width: 100%;
+  background: #2f303a;
+}
