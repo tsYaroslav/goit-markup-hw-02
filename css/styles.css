@@ -1,3 +1,18 @@
+/* vars */
+:root {
+  --primary-black: #212121;
+  --secondary-black: #2f303a;
+
+  --primary-white: #fff;
+
+  --primary-blue: #2196f3;
+
+  --white-bg: #f5f4fa;
+
+  --primary-grey: rgba(255, 255, 255, 0.6);
+  --secondary-grey: #eee;
+  --tertiary-grey: #ececec;
+}
 /*  Box sizing rules  */
 *,
 *::before,
@@ -19,6 +34,10 @@ dd {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*  Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed  */
 ul[role='list'],
 ol[role='list'] {
@@ -35,6 +54,13 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background: var(--primary-white);
+  color: var(--primary-black);
+}
+
+body,
+* {
+  font: 14px/24px Roboto, 'Helvetica Neue', sans-serif;
 }
 
 /*  A elements that don't have a class get default styles  */
@@ -57,8 +83,34 @@ select {
   font: inherit;
 }
 
-* {
-  font: 14px/24px Roboto, 'Helvetica Neue', sans-serif;
+button {
+  background: var(--white-bg);
+  border-radius: 4px;
+  border: none;
+}
+
+button.active,
+button:hover {
+  color: var(--primary-white);
+  background: var(--primary-blue);
+  transition: all 0.15s;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
 }
 
 .grid {
@@ -69,7 +121,7 @@ select {
 
 .main-h1 {
   font: 900 44px/60px Roboto, 'Helvetica Neue', sans-serif;
-  color: #fff;
+  color: var(--primary-white);
   margin-bottom: 40px;
 }
 
@@ -85,46 +137,55 @@ select {
 .section-caption {
   margin-bottom: 50px;
   text-align: center;
-  color: #212121;
+  color: var(--primary-black);
   font: 700 36px/42px Roboto, 'Helvetica Neue', sans-serif;
 }
 
 /* Header */
 
 .header {
-  background: #fff;
+  background: var(--primary-white);
+  border-bottom: 1px solid var(--tertiary-grey);
 }
 
 .header-inner {
   overflow: auto;
-  padding: 26px 0;
+  padding: 24px 0;
 }
 
 .logo {
-  display: inline-block;
+  display: block;
   float: left;
+  margin-right: 70px;
+  color: var(--primary-black);
+}
+
+.logo span {
+  font: 700 26px/30px Raleway, 'Helvetica Neue', sans-serif;
+}
+
+.logo span:first-child {
+  color: var(--primary-blue);
 }
 
 .nav-list,
 .contacts-list {
-  display: inline-block;
   float: left;
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin-top: 6px;
 }
 
 .nav-list li,
 .contacts-list li {
-  float: left;
-  padding: 0 25px;
   display: inline-block;
+  padding: 0 25px;
 }
 
 .nav-list li a,
 .contacts-list li a {
   text-decoration: none;
-  color: #212121;
+  color: var(--primary-black);
   font: 500 14px/16px Roboto, 'Helvetica Neue', sans-serif;
   letter-spacing: 0.02em;
 }
@@ -133,7 +194,7 @@ select {
 .nav-list li a.active,
 .contacts-list li a:hover,
 .contacts-list li a.active {
-  color: #2196f3;
+  color: var(--primary-blue);
 }
 
 .contacts-list {
@@ -159,15 +220,9 @@ select {
 }
 
 .main-cta {
-  display: inline-block;
   padding: 10px 32px;
   margin: 0 auto;
-  background: #2196f3;
-  color: #fff;
   font: 700 16px/30px Roboto, 'Helvetica Neue', sans-serif;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: none;
-  border-radius: 4px;
 }
 
 .main-cta:hover {
@@ -193,7 +248,7 @@ select {
 
 .benefit-caption {
   margin-bottom: 15px;
-  color: #212121;
+  color: var(--primary-black);
   font: 700 14px/16px Roboto, 'Helvetica Neue', sans-serif;
 }
 
@@ -211,7 +266,7 @@ select {
 
 /* team section */
 .team {
-  background: #f5f4fa;
+  background: var(--white-bg);
   display: inline-block;
   width: 100%;
 }
@@ -226,8 +281,7 @@ select {
   width: calc(25% - 22.5px);
   margin-right: 22.5px;
   text-align: center;
-  background: #ffffff;
-  /* material shadow v1 */
+  background: var(--primary-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -235,6 +289,10 @@ select {
 
 .team-mate:nth-child(4n) {
   margin-right: 0;
+}
+
+.mate-data {
+  padding: 34px;
 }
 
 .mate-img {
@@ -245,13 +303,12 @@ select {
 
 .mate-name {
   margin-bottom: 10px;
-  font: 500 16px/18.75px Roboto, 'Helvetica Neue', sans-serif;
+  font: 500 16px/19px Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .mate-position {
-  margin-bottom: 30px;
   color: #757575;
-  font: 400 16px/18.75px Roboto, 'Helvetica Neue', sans-serif;
+  font: 400 16px/19px Roboto, 'Helvetica Neue', sans-serif;
 }
 
 /* footer */
@@ -262,22 +319,82 @@ select {
   background: #2f303a;
 }
 
-.footer * {
-  color: #fff;
-}
-
-.footer-leftside .logo {
+.footer .logo {
   margin-bottom: 20px;
+  color: var(--primary-white);
 }
 
-.footer p {
-  width: 100%;
+.footer-leftside {
   display: inline-block;
 }
 
 .footer a {
-  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer a {
+  color: var(--primary-grey);
   text-decoration: none;
 }
 
+.footer a:hover {
+  color: var(--primary-white);
+  transition: 0.15s;
+}
+
 /* portfolio page */
+.portfolio-head {
+  display: inline-block;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.portfolio-head li {
+  display: inline-flex;
+  display: inline-block;
+  text-align: center;
+}
+
+.filter-btn {
+  float: left;
+  font: 500 16px/26px Roboto, 'Helvetica Neue', sans-serif;
+  padding: 8px 22px;
+  margin: 4px;
+}
+
+.portfolio-body {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.project-item {
+  width: 100%;
+  max-width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  float: left;
+  background: var(--primary-white);
+  border: 1px solid var(--secondary-grey);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.project-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.project-info {
+  padding: 24px;
+}
+
+.project-name {
+  font: 700 18px/36px Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.project-description {
+  font: 400 16px/30px Roboto, 'Helvetica Neue', sans-serif;
+}
