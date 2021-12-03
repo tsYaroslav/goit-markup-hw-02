@@ -12,6 +12,7 @@
   --primary-grey: rgba(255, 255, 255, 0.6);
   --secondary-grey: #eee;
   --tertiary-grey: #ececec;
+  --text-grey: #757575;
 }
 /*  Box sizing rules  */
 *,
@@ -53,13 +54,12 @@ html {
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 30px;
+  color: var(--text-grey);
   background: var(--primary-white);
-  color: var(--primary-black);
 }
 
-body,
-* {
+body {
   font: 14px/24px Roboto, 'Helvetica Neue', sans-serif;
 }
 
@@ -84,7 +84,6 @@ select {
 }
 
 button {
-  background: var(--white-bg);
   border-radius: 4px;
   border: none;
 }
@@ -100,6 +99,19 @@ button:hover {
 
 button:hover {
   cursor: pointer;
+}
+
+button:focus {
+  color: var(--primary-blue);
+  background-color: var(--white-bg);
+  border-radius: 2px;
+  outline: 1px solid var(--primary-blue);
+}
+
+button.active:focus {
+  color: var(--primary-blue);
+  background: var(--white-bg);
+  outline: 1px solid var(--primary-blue);
 }
 
 ul {
@@ -123,6 +135,7 @@ ul {
   font: 900 44px/60px Roboto, 'Helvetica Neue', sans-serif;
   color: var(--primary-white);
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .section {
@@ -182,19 +195,22 @@ ul {
   padding: 0 25px;
 }
 
-.nav-list li a,
-.contacts-list li a {
+a {
   text-decoration: none;
   color: var(--primary-black);
   font: 500 14px/16px Roboto, 'Helvetica Neue', sans-serif;
   letter-spacing: 0.02em;
 }
 
-.nav-list li a:hover,
-.nav-list li a.active,
-.contacts-list li a:hover,
-.contacts-list li a.active {
+a:hover,
+a.active {
   color: var(--primary-blue);
+}
+
+a:focus {
+  color: var(--primary-blue);
+  border-radius: 2px;
+  outline: 1px solid var(--primary-blue);
 }
 
 .contacts-list {
@@ -204,14 +220,13 @@ ul {
 /* Main cta section*/
 .main-section {
   position: relative;
-  background: #2f303a;
+  background: var(--secondary-black);
   height: calc(100vh - 80px);
 }
 
 .cta-block {
-  display: inline-block;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -220,9 +235,18 @@ ul {
 }
 
 .main-cta {
-  padding: 10px 32px;
   margin: 0 auto;
   font: 700 16px/30px Roboto, 'Helvetica Neue', sans-serif;
+  color: var(--primary-white);
+  background-color: var(--primary-blue);
+  padding: 10px 32px;
+}
+
+.main-cta:focus {
+  color: var(--primary-blue);
+  background-color: var(--white-bg);
+  border-radius: 2px;
+  outline: 1px solid var(--primary-blue);
 }
 
 .main-cta:hover {
@@ -230,9 +254,12 @@ ul {
 }
 
 /* benefit section */
+.benefit-list {
+  display: flex;
+  flex-direction: row;
+}
+
 .benefit {
-  width: 25%;
-  float: left;
   margin: 0;
   box-sizing: border-box;
   padding-right: 30px;
@@ -246,36 +273,35 @@ ul {
   margin-bottom: 15px;
   color: var(--primary-black);
   font: 700 14px/16px Roboto, 'Helvetica Neue', sans-serif;
+  text-transform: uppercase;
 }
 
 .benefit-text {
-  color: #757575;
   font: 400 14px/24px Roboto, 'Helvetica Neue', sans-serif;
 }
 
 /* expertise section */
-.expertise-item {
-  display: inline-block;
-  float: left;
-  width: 33.33%;
+.expertise-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* team section */
+.team-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .team {
   background: var(--white-bg);
-  display: inline-block;
-  width: 100%;
 }
 
 .team-mate {
-  display: inline-block;
-  float: left;
-  width: 25%;
-}
-
-.team-mate {
-  width: calc(25% - 22.5px);
-  margin-right: 22.5px;
+  max-width: 270px;
   text-align: center;
   background: var(--primary-white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -292,6 +318,7 @@ ul {
 }
 
 .mate-img {
+  width: 270px;
   width: 100%;
   height: auto;
   margin-bottom: 30px;
@@ -299,11 +326,11 @@ ul {
 
 .mate-name {
   margin-bottom: 10px;
+  color: var(--primary-black);
   font: 500 16px/19px Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .mate-position {
-  color: #757575;
   font: 400 16px/19px Roboto, 'Helvetica Neue', sans-serif;
 }
 
@@ -312,7 +339,7 @@ ul {
   padding: 60px 0;
   display: inline-block;
   width: 100%;
-  background: #2f303a;
+  background: var(--secondary-black);
 }
 
 .footer .logo {
@@ -320,19 +347,17 @@ ul {
   color: var(--primary-white);
 }
 
-.footer-leftside {
-  display: inline-block;
-}
-
 .footer a {
-  width: 100%;
-  display: inline-block;
   margin-bottom: 8px;
 }
 
 .footer a {
   color: var(--primary-grey);
   text-decoration: none;
+}
+
+.footer-leftside a {
+  width: 100%;
 }
 
 .footer a:hover {
@@ -390,6 +415,7 @@ ul {
 }
 
 .project-name {
+  color: var(--primary-black);
   font: 700 18px/36px Roboto, 'Helvetica Neue', sans-serif;
 }
 
