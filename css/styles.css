@@ -35,10 +35,6 @@ dd {
   margin: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
 /*  Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed  */
 ul[role='list'],
 ol[role='list'] {
@@ -62,6 +58,24 @@ body {
 /*  A elements that don't have a class get default styles  */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-black);
+  font: 500 14px/1.14 Roboto, 'Helvetica Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+a:hover,
+a.active {
+  color: var(--primary-blue);
+}
+
+a:focus {
+  color: var(--primary-blue);
+  border-radius: 2px;
+  outline: 1px solid var(--primary-blue);
 }
 
 /*  Make images easier to work with  */
@@ -156,14 +170,15 @@ ul {
 }
 
 .header-inner {
-  overflow: auto;
   padding: 24px 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 
-.logo {
+.logo,
+.logo:hover,
+.logo:focus {
   margin-right: 70px;
   color: var(--primary-black);
 }
@@ -189,27 +204,9 @@ ul {
   margin-left: auto;
 }
 
-.nav-list li,
-.contacts-list li {
-  padding: 0 25px;
-}
-
-a {
-  text-decoration: none;
-  color: var(--primary-black);
-  font: 500 14px/1.14 Roboto, 'Helvetica Neue', sans-serif;
-  letter-spacing: 0.02em;
-}
-
-a:hover,
-a.active {
-  color: var(--primary-blue);
-}
-
-a:focus {
-  color: var(--primary-blue);
-  border-radius: 2px;
-  outline: 1px solid var(--primary-blue);
+.nav-list li a,
+.contacts-list li a {
+  padding: 5px 25px;
 }
 
 /* Main cta section*/
@@ -288,7 +285,7 @@ a:focus {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .team {
@@ -343,13 +340,13 @@ a:focus {
   color: var(--primary-white);
 }
 
-.footer li {
-  margin-bottom: 8px;
-}
-
 .footer a {
   color: var(--primary-grey);
   text-decoration: none;
+}
+
+.footer a:focus {
+  color: var(--primary-blue);
 }
 
 .footer-leftside {
@@ -358,6 +355,7 @@ a:focus {
 
 .footer-leftside a {
   width: 100%;
+  padding: 4px 5px;
 }
 
 .footer a:hover {
